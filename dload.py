@@ -29,7 +29,7 @@ class Charon(YouTube):
 		self.name = make_shell_string(self.name)
 
 	def download(self):
-		self.streams.first().download(PATH, filename="video")
+		self.streams.filter(subtype="mp4").first().download(PATH, filename="video")
 		Stripper(self.name)
 
 
