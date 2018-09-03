@@ -1,7 +1,6 @@
 from pytube import YouTube
 import unicodedata
 import os
-
 PATH = "/"
 
 def make_shell_string(str):
@@ -12,11 +11,13 @@ def make_shell_string(str):
 	str = str.replace("\'", "\\\'")
 	str = str.replace(",", "")
 	str = str.replace("/", "")
+	str = str.replace("|", "")
 	return str
 
 class Stripper():
 	def __init__(self, name):
-		path = "/music/" + name + ".wav"
+		path = PATH + "music/" + name + ".wav"
+		print("PATH --> {}".format(path))
 		video = PATH+"video.mp4"
 		cmd = "ffmpeg -i " + video + " -ab 160k -ac 2 -ar 44100 -vn " + path
 		os.popen(cmd)
