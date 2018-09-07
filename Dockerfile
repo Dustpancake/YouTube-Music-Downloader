@@ -7,7 +7,7 @@ RUN apk add --update \
     ffmpeg \
   && pip install pytube \
   && rm -rf /var/cache/apk/* \
-  && mkdir /music
-COPY dload.py /
-ENTRYPOINT ["python", "/dload.py"]
+  && mkdir /music /code
+COPY src/dload.py /code/
+ENTRYPOINT ["python", "/code/dload.py"]
 

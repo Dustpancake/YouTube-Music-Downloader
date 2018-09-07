@@ -13,8 +13,6 @@ def make_shell_string(str):
 	str = str.replace("/", "")
 	str = str.replace("|", "")
 	str = str.replace("[", "\\[")
-	str = str.replace("'", "")
-	str = str.replace('"', "")
 	str = str.replace("]", "\\]")
 	str = str.replace("{", "\\{")
 	str = str.replace("}", "\\}")

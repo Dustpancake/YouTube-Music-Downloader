@@ -1,0 +1,2 @@
+#i!/bin/bash
+docker run --rm -v ~/music/:/music -v ./src:/code ytdownload "$1"
