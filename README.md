@@ -7,5 +7,7 @@ docker build -t {IMG_NAME} .
 ```
 To use, docker requires a shared volume with the host machine to save the .wav file - I have named the shared folder in the container '/music'. As such, example execution:
 ```
-docker run -v {PATH_TO_HOST_FOLDER}:/music {IMG_NAME} "{YOUTUBE_URL}"
+docker run --rm -v {PATH_TO_HOST_FOLDER}:/music {IMG_NAME} "{YOUTUBE_URL}"
 ```
+
+New: bash script! Modify volume paths for your machine, and link the download script into your path!
