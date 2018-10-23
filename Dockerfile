@@ -10,4 +10,3 @@ RUN apk add --update \
   && mkdir /music /code
 COPY src/dload.py /code/
 ENTRYPOINT ["python", "/code/dload.py"]
-

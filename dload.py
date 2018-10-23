@@ -19,6 +19,14 @@ def make_shell_string(str):
 	str = str.replace("{", "\\{")
 	str = str.replace("}", "\\}")
 	str = str.replace(".", "")		#risky
+	str = str.replace("&", "")
+	str = str.replace("%", "")
+	str = str.replace("*", "")
+	str = str.replace("!", "")
+	str = str.repalce("@", "")
+	str = str.replace("?", "")
+	str = str.replace("^", "")
+	str = str.replace("#", "")
 	return str
 
 class Stripper():
@@ -33,6 +41,13 @@ class Stripper():
 class Charon(YouTube):
 	def __init__(self, url):
 		YouTube.__init__(self, url)
+		try:
+			length = self.length
+		except:
+			exit(0)
+		else:
+			if length > 600:
+				exit(0)
 		self.name = unicodedata.normalize("NFKD", self.title).encode('ascii', 'ignore').replace(" ", "_")
 		self.name = make_shell_string(self.name)
 

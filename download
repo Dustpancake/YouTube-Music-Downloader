@@ -1,2 +1,2 @@
-#i!/bin/bash
+#!/bin/bash
 docker run --rm -v /:/music -v /:/code ytdownload "$1"
