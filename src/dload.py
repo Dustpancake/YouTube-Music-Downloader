@@ -23,7 +23,7 @@ def make_shell_string(str):
 	str = str.replace("%", "")
 	str = str.replace("*", "")
 	str = str.replace("!", "")
-	str = str.repalce("@", "")
+	str = str.replace("@", "")
 	str = str.replace("?", "")
 	str = str.replace("^", "")
 	str = str.replace("#", "")
@@ -42,12 +42,12 @@ class Charon(YouTube):
 	def __init__(self, url):
 		YouTube.__init__(self, url)
 		try:
-			length = self.length
+			length = int(self.length)
 		except:
 			exit(0)
 		else:
-			print("SONG IS TOO LONG, quitting...")
 			if length > 600:
+				print("song is {} s, too long".format(length))
 				exit(0)
 		self.name = unicodedata.normalize("NFKD", self.title).encode('ascii', 'ignore').replace(" ", "_")
 		self.name = make_shell_string(self.name)
