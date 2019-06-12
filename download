@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run --rm -v /:/music -v /:/code ytdownload "$1"
+docker run --rm -v $(pwd)/audio:/music -v $(pwd)/src:/src ytdownload "$1"

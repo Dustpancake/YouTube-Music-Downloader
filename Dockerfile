@@ -5,8 +5,9 @@ RUN apk add --update \
     py-pip \
     build-base \
     ffmpeg \
-  && pip install pytube \
+    git \
   && rm -rf /var/cache/apk/* \
-  && mkdir /music /code
+  && mkdir /music /code && git clone https://github.com/minwook-shin/pytube && mv pytube/pytube ./code/ \
+  && rm -rf pytube && ls -l && ls -l code
 COPY src/dload.py /code/
 ENTRYPOINT ["python", "/code/dload.py"]

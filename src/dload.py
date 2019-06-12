@@ -41,14 +41,6 @@ class Stripper():
 class Charon(YouTube):
 	def __init__(self, url):
 		YouTube.__init__(self, url)
-		try:
-			length = int(self.length)
-		except:
-			exit(0)
-		else:
-			if length > 600:
-				print("song is {} s, too long".format(length))
-				exit(0)
 		self.name = unicodedata.normalize("NFKD", self.title).encode('ascii', 'ignore').replace(" ", "_")
 		self.name = make_shell_string(self.name)
 
